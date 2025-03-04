@@ -14,19 +14,19 @@ void AnyList::insertFront(int newData) {
 
 void AnyList::print() const {
     if (first == nullptr)
-        // Check if the list is empty.
-        // You can also use: if (count == 0)
+    // Check if the list is empty.
+    // You can also use: if (count == 0)
         cerr << "List is empty.";
-        // Use cerr, instead of cout. Why?
+    // Use cerr, instead of cout. Why?
     else {
         Node *current = first;
         // Create a pointer to traverse the list.
         // This pointer will point to the first node in the list.
 
         while (current != nullptr)
-            // While the current pointer is NOT a nullptr,
-            // that is, while the current pointer has not reached
-            // the end of the list.
+        // While the current pointer is NOT a nullptr,
+        // that is, while the current pointer has not reached
+        // the end of the list.
         {
             // Output the data.
             cout << current->getData() << " ";
@@ -209,13 +209,75 @@ void AnyList::insertBefore(int value1, int value2) {
     Node *current = first;
     bool found = false;
 
-    while (!found && current->getNext() != nullptr) {
-        if (current->getNext()->getData() == value2) {
-            current->setNext(new Node(value1, current->getNext()));
-            found = true;
-            count++;
-        } else {
-            current = current->getNext();
+    if (first->getData() == value2) {
+        first = new Node(value1, first);
+        count++;
+    } else {
+        while (!found && current->getNext() != nullptr) {
+            if (current->getNext()->getData() == value2) {
+                current->setNext(new Node(value1, current->getNext()));
+                found = true;
+                count++;
+            } else {
+                current = current->getNext();
+            }
         }
     }
+}
+
+// void AnyList::swapFirstNode(AnyList &otherList) {
+//     if (count != 0 && otherList.count != 0) {
+//         Node *temp = first->getNext();
+//
+//         // Exchange next pointer
+//         first->setNext(otherList.first->getNext());
+//         otherList.first->setNext(temp);
+//
+//         // Exchange first pointer
+//         temp = first;
+//         first = otherList.first;
+//         otherList.first = temp;
+//     }
+// }
+
+void AnyList::swapFirstNode(AnyList &otherList) {
+    if (count != 0 && otherList.count != 0) {
+        Node *temp = otherList.first;
+
+        otherList.first = first;
+        first = temp;
+    }
+}
+
+bool AnyList::isEqual(const AnyList &otherList) const {
+    if (count != otherList.count) {
+        return false;
+    }
+
+    Node *current = first;
+    Node *currentOther = otherList.first;
+
+    while (current != nullptr && currentOther != nullptr) {
+        if (current->getData() != currentOther->getData()) {
+            return false;
+        }
+
+        current = current->getNext();
+        currentOther = currentOther->getNext();
+    }
+
+    return true;
+}
+
+void AnyList::rotateNodes() {
+    Node *current = first;
+    int lastIndex = count - 1;
+    for (int i = 0; i < lastIndex; i++) {
+        current = current->getNext();
+    }
+
+    Node *temp = first;
+    first = first->getNext();
+    temp->setNext(nullptr);
+    current->setNext(temp);
 }

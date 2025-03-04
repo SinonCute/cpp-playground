@@ -1,3 +1,3 @@
-C:/Users/caoth/CLionProjects/untitled/cmake-build-debug/CMakeFiles/untitled.dir
-C:/Users/caoth/CLionProjects/untitled/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/caoth/CLionProjects/untitled/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/sinon/CLionProjects/cpp-playground/cmake-build-debug/CMakeFiles/untitled.dir
+/Users/sinon/CLionProjects/cpp-playground/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/sinon/CLionProjects/cpp-playground/cmake-build-debug/CMakeFiles/rebuild_cache.dir

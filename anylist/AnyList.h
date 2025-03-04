@@ -37,46 +37,66 @@ public:
      * 1.Delete the first node of the calling object.
      */
     void deleteFirstNode();
+
     /**
      * 2.Delete the second node of the calling object.
      */
     void deleteSecondNode();
+
     /**
      * 3.Delete the last node of the calling object.
      */
     void deleteLastNode();
+
     /**
      * 4.Delete the middle node (assume the list has an odd number of nodes).
      */
     void deleteMiddleNode();
+
     /**
      * 6.Swap the Value of the First Node with the Value of the Last Node
      */
     void swapFirstLast();
+
     /**
      * 7. Swap the Value of the First Node with the Value of the Second Node
      */
     void swapFirstSecond();
+
     /**
      * 8. Swap the Value of the First Node with the Value of the Node Before Last
      */
     void swapFirstBeforeLast();
+
     /**
      * 32. Search for a Value in the List
      */
     bool search(int value) const;
+
     /**
      * 19. Move the First Node to Last Position
      */
     void moveFirstToLast();
+
     /**
      * 45. Given Two int Parameters, value1 and value2, Insert a New Node Storing value1 Before the Node That Stores value2
      */
     void insertBefore(int value1, int value2);
 
+    /**
+     * 57. Swap the First Node of the Calling Object with the First Node of the Parameter Object
+     */
+    void swapFirstNode(AnyList& otherList);
 
+    /**
+     * 63. Compare the Elements of the Calling Object and the Parameter Object and Return true if They Are the Same
+     */
+    bool isEqual(const AnyList &otherList) const;
 
-
+    /**
+     * 21. Rotate Nodes (Repositioning Pointers, Not Swapping Values)
+     */
+    void rotateNodes();
 
     void print() const;
 
