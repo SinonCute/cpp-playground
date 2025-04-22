@@ -9,11 +9,19 @@ set(PROJECT_SOURCES
 
 
 add_executable(untitled
-        main.cpp
+#        main.cpp
         AnyList/AnyList.cpp
         AnyList/AnyList.h
         DoublyList/DoublyList.cpp
         DoublyList/DoublyList.h
         darray/DArray.cpp
         darray/DArray.h
+#        vector/vectorMain.cpp
+#        list/listMain.cpp
+#        stack/stackMain.cpp
+#        queue/queueMain.cpp
+#        set/setMain.cpp
+#        multiset/multisetMain.cpp
+#        map/mapMain.cpp
+        challenge/main.cpp
 )
